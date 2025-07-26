@@ -1,0 +1,20 @@
+
+The main function contains an Ubuntu command to compile the program in Ubuntu 
+for Ubuntu and for Windows. Like any from-Ubuntu for-Windows compilation, we use 
+the g++-mingw-w64 tool. Instead of ncurses, we use PDCurses, which can be cloned 
+from here: 
+
+https://github.com/wmcbrine/PDCurses
+
+I renamed "PDCurses-master" into "PDCurses". 
+
+$ cd PDCurses
+$ make -f Makefile CC=x86_64-w64-mingw32-gcc 
+
+This produces the static library "pdcurses.a", which the linker can then be pointed to. 
+
+x86_64-w64-mingw32-g++-posix /* source files */ -I./PDCurses -L./PDCurses/wincon -l:pdcurses.a -o /* output filename */ -static
+
+-I tells the linker where to find "curses.h", and -L tells the linker where to 
+find "pdcurses.a". -static includes all libraries within the executable, so that 
+it can be ran independent of g++ being installed on the end-user's system. 
