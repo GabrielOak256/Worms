@@ -38,7 +38,7 @@ David Maynard Worms? Development Notes
 https://archive.org/details/david-maynard-worms-development-notes
 
 Unfortunately, the source code looked too much like assembly language for me to understand how to rewrite the behavior in C++. 
-I figured I could write out such a set of codes, by looking through the list of path images and picking paths that are open, 
+I figured I could write out such a set of codes by looking through the list of path images and picking paths that are open, 
 before recalling that I already implemented RAND mode to do that autonomously. 
 
 
