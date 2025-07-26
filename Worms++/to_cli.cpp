@@ -116,7 +116,7 @@ bool print_help(const vector<string>& args) {
         std::cout << "y [integer value for screen height]\n";
         std::cout << "x [integer value for screen width]\n";
         std::cout << "speed [decimal value for seconds per step]\n";
-        std::cout << "Example:    Worms++ red\n";
+        std::cout << "Example:    Worms++ white FILE\n";
         std::cout << "Example:    Worms++ y 40 x 160 speed 0.03125 white black FILE cyan yellow magenta RAND red green blue PLAY\n";
         
         return true; 
