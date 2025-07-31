@@ -110,9 +110,18 @@ double get_time_step(const vector<string>& args) {
 
 // Print the "-h" help menu. 
 bool print_help(const vector<string>& args) {
-    if (count(args.begin(), args.end(), "-h") || count(args.begin(), args.end(), "--help")  || count(args.begin(), args.end(), "h") || count(args.begin(), args.end(), "help")) {
+    if (args.empty() || count(args.begin(), args.end(), "-h") || count(args.begin(), args.end(), "--help")  || count(args.begin(), args.end(), "h") || count(args.begin(), args.end(), "help")) {
         
-        std::cout << "Worms++ [worm color] [worm mode]\n";
+        std::cout << "An implementation of Paterson's Worms and David Maynard's Worms? in a terminal.\n";
+        std::cout << "Paterson's Worms read the availability of the six paths around them, and have a direction programmed for each image.\n";
+        std::cout << "Three modes are provided for a worm.\n";
+        std::cout << "PLAY - The player uses up and down arrows to program what the worm should do when it sees this situation.\n";
+        std::cout << "FILE - Read the file of encodings produced from the last game. Without it, default to RAND.\n";
+        std::cout << "RAND - Generate a valid path at each step.\n";
+        std::cout << "A worm scores a point by taking the last path out of a point, leaving 0 paths behind.\n";
+        std::cout << "A worm dies by having no paths out of a point, leaving X behind.\n";
+        std::cout << "Note: When two worms collide, the death marker will only be the color of the latter one.\n";
+        std::cout << "\nWorms++ [worm color] [worm mode]\n";
         std::cout << "y [integer value for screen height]\n";
         std::cout << "x [integer value for screen width]\n";
         std::cout << "speed [decimal value for seconds per step]\n";
